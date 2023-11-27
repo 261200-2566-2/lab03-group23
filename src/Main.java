@@ -1,17 +1,29 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        RPGCharacter player = new RPGCharacter(5, 100);
+        Sword playerSword = new Sword(10, 5, 2);
+        System.out.println("Player Speed : " + player.getRunSpeed());
+        player.equipSword(playerSword);
+        System.out.println("Player equip sword");
+        System.out.println("Player Speed : " + player.getRunSpeed());
+        System.out.println("-----------------------------------");
+        RPGCharacter enemy = new RPGCharacter(5, 100);
+        Shield enemyShield = new Shield(10, 3, 1);
+        Sword enemySword = new Sword(10, 5, 2);
+        enemy.equipShield(enemyShield);
+        //enemy.unequipShield();
+        enemy.equipSword(enemySword);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("Enemy HP : " + enemy.getCurrentHP());
+        player.attack(enemy);
+        System.out.println("Enemy got attacked");
+        System.out.println("Enemy HP : " + enemy.getCurrentHP());
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.println("-----------------------------------");
+
+        System.out.println("Player HP : " + player.getCurrentHP());
+        enemy.attack(player);
+        System.out.println("Player got attacked");
+        System.out.println("Player HP : " + player.getCurrentHP());
     }
 }
