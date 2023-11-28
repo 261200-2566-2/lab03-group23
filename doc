@@ -1,0 +1,49 @@
+Design Document
+
+RPGCharacter Class:
+level (int): level ของ character
+maxHP (double): HP สูงสุด ของ character
+maxMana (double): Mana สูงสุด ของ character
+currentHP (double): HP ปัจจุบัน
+currentMana (double): Mana ปัจจุบัน
+baseRunSpeed (int): Base running speed
+maxRunSpeed (double): Run speed
+equippedSword (Sword): Ref. equipped sword
+equippedShield (Shield): Ref. equipped shield
+---------------------------------------------------
+Sword Class:
+damage (double): Base damage ของ sword
+runSpeedDecrease (double): ลด character speed เมื่อ equipped
+level (int): Level ของ Sword
+-----------------------------------------------------------
+Shield Class:
+defense (double): Base defense ของ shield
+runSpeedDecrease (double): ลด character speed เมื่อ equipped
+level (int): Level ของ Shield
+---------------------------------------------------------------
+
+
+
+RPGCharacter Class:
+playerStats(): Initializes stat ของ character
+calculateMaxRunSpeed(): คำนวน run speed คิดจาก level
+equipSword(Sword sword): Equips sword
+unequipSword(): Unequips sword
+equipShield(Shield shield): Equips shield
+unequipShield(): Unequips shield
+attack(RPGCharacter target): สั่ง attack target แล้ว target ได้รับ damage
+receiveDamage(double damage): คำนวน current HP จาก damage ที่ได้รับ
+getCurrentHP(): Returns the current HP
+getRunSpeed():Returns the maxRunSpeed
+---------------------------
+Sword Class:
+upDamage(): คำนวน damage ที่เพิ่มคิดจาก base damage และ level ของ sword
+upRunSpeedDecrease(): ลด runs peed ของ character เมื่อ equip
+---------------------------------
+Shield Class:
+upDefense():  คำนวน damage ที่ลดเมื่อโดน attack คิดจาก base damage และ level ของ shield
+upRunSpeedDecrease(): ลด runs peed ของ character เมื่อ equip
+----------------------------------------------------------------------
+
+
+
